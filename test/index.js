@@ -10,13 +10,8 @@ import {taskRunner, cancel} from '@koax/fork'
 import run from '@koax/run'
 import elapsed from '@f/elapsed-time'
 
-function dropUndefined (action, next) {
-  if (!action) return action
-  return next()
-}
-
 function createDispatch () {
-  return taskRunner(run([dropUndefined, promise, channelsEffect(), timingEffect]))
+  return taskRunner(run([promise, channelsEffect(), timingEffect]))
 }
 
 /**
