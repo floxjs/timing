@@ -110,4 +110,5 @@ function interval (fn, wait) {
  * Exports
  */
 
+export default timingEffect
 export {timingEffect, delay, timeout, interval}
