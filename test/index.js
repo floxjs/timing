@@ -4,14 +4,13 @@
 
 import test from 'tape'
 import {timingEffect, delay, timeout, interval} from '../src'
-import promise from '@koax/promise'
-import {channelsEffect} from '@koax/channels'
-import {taskRunner, cancel} from '@koax/fork'
-import run from '@koax/run'
+import flo from 'redux-flo'
+import {forkEffect, cancel} from '@flox/fork'
 import elapsed from '@f/elapsed-time'
+import bind from '@f/bind-middleware'
 
 function createDispatch () {
-  return taskRunner(run([promise, channelsEffect(), timingEffect]))
+  return bind([flo(), forkEffect, timingEffect])
 }
 
 /**

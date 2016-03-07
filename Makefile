@@ -31,7 +31,7 @@ init:
 	@git init
 	@git add .
 	@git commit -am "FIRST"
-	@hub create koaxjs/timing -d "Delay, timeout, and interval effects."
+	@hub create floxjs/timing -d "Delay, timeout, and interval effects."
 	@travis enable
 	@git push -u origin master
 

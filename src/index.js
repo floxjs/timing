@@ -2,15 +2,15 @@
  * Imports
  */
 
-import {fork} from '@koax/fork'
+import {fork} from '@flox/fork'
 
 /**
  * Actions
  */
 
-const DELAY = '@koax/timing/DELAY'
-const TIMEOUT = '@koax/timing/TIMEOUT'
-const INTERVAL = '@koax/timing/INTERVAL'
+const DELAY = '@flox/timing/DELAY'
+const TIMEOUT = '@flox/timing/TIMEOUT'
+const INTERVAL = '@flox/timing/INTERVAL'
 
 
 /**
@@ -20,13 +20,13 @@ const INTERVAL = '@koax/timing/INTERVAL'
  * @return {Promise|Generator} delay, timeout, or interval effect driver
  */
 
-function * timingEffect (action, next) {
+const timingEffect = ({dispatch}) => next => action => {
   if (action.type === DELAY) {
     return delayEffect(action.payload)
   } else if (action.type === TIMEOUT) {
-    return yield timeoutEffect(action.payload.fn, action.payload.wait)
+    return dispatch(timeoutEffect(action.payload.fn, action.payload.wait))
   } else if (action.type === INTERVAL) {
-    return yield intervalEffect(action.payload.fn, action.payload.wait)
+    return dispatch(intervalEffect(action.payload.fn, action.payload.wait))
   }
   return next()
 }
@@ -50,8 +50,9 @@ function delayEffect (delay) {
  * @return {Task}
  */
 
-function * timeoutEffect (fn, d) {
-  return yield fork(function * () {
+function timeoutEffect (fn, d) {
+  return fork(function * () {
+    console.log('running timeout')
     yield delay(d)
     yield fn()
   })
@@ -64,8 +65,8 @@ function * timeoutEffect (fn, d) {
  * @return {Task}
  */
 
-function * intervalEffect (fn, d) {
-  return yield fork(function * () {
+function intervalEffect (fn, d) {
+  return fork(function * () {
     while (true) {
       yield delay(d)
       yield fn()

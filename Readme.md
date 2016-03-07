@@ -6,16 +6,16 @@
 [![NPM version][npm-image]][npm-url]
 [![Code style][standard-image]][standard-url]
 
-Delay, timeout, and interval effects. (Included in koax)
+Delay, timeout, and interval effects. (Included in flox)
 
 ## Installation
 
-    $ npm install @koax/timing
+    $ npm install @flox/timing
 
 ## Usage
 
 ```js
-import {delay, timeout, interval} from '@koax/timing'
+import {delay, timeout, interval} from '@flox/timing'
 
 function * () {
   yield delay(500)
@@ -61,11 +61,11 @@ function * () {
 
 MIT
 
-[travis-image]: https://img.shields.io/travis/koaxjs/timing.svg?style=flat-square
-[travis-url]: https://travis-ci.org/koaxjs/timing
-[git-image]: https://img.shields.io/github/tag/koaxjs/timing.svg?style=flat-square
-[git-url]: https://github.com/koaxjs/timing
+[travis-image]: https://img.shields.io/travis/floxjs/timing.svg?style=flat-square
+[travis-url]: https://travis-ci.org/floxjs/timing
+[git-image]: https://img.shields.io/github/tag/floxjs/timing.svg?style=flat-square
+[git-url]: https://github.com/floxjs/timing
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: https://github.com/feross/standard
-[npm-image]: https://img.shields.io/npm/v/@koax/timing.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/@koax/timing
+[npm-image]: https://img.shields.io/npm/v/@flox/timing.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/@flox/timing

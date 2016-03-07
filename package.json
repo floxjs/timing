@@ -1,7 +1,7 @@
 {
-  "name": "@koax/timing",
+  "name": "@flox/timing",
   "description": "Delay, timeout, and interval effects.",
-  "repository": "git://github.com/koaxjs/timing.git",
+  "repository": "git://github.com/floxjs/timing.git",
   "version": "0.1.2",
   "license": "MIT",
   "main": "lib/index.js",
@@ -11,13 +11,12 @@
     "postversion": "git push && git push --tags && npm publish --access=public"
   },
   "dependencies": {
-    "@koax/fork": "^0.1.3"
+    "@f/bind-middleware": "^1.1.1",
+    "@flox/fork": "^0.1.3",
+    "redux-flo": "^2.1.1"
   },
   "devDependencies": {
     "@f/elapsed-time": "^1.0.0",
-    "@koax/channels": "^0.1.2",
-    "@koax/promise": "^1.0.0",
-    "@koax/run": "^0.2.0",
     "babel-cli": "^6.4.0",
     "babel-polyfill": "^6.3.13",
     "babel-preset-es2015": "^6.3.13",
