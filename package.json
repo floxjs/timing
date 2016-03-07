@@ -2,7 +2,7 @@
   "name": "@flox/timing",
   "description": "Delay, timeout, and interval effects.",
   "repository": "git://github.com/floxjs/timing.git",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
